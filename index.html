@@ -684,10 +684,97 @@
             to { transform: rotate(360deg); }
         }
 
+        /* Social Links Section */
+        .social-section {
+            text-align: center;
+            padding: 30px 20px 20px;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 20px;
+        }
+
+        .social-title {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass);
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-link.telegram {
+            border-color: rgba(0, 136, 204, 0.3);
+            color: #88c0ff;
+        }
+
+        .social-link.telegram:hover {
+            background: rgba(0, 136, 204, 0.15);
+            border-color: rgba(0, 136, 204, 0.5);
+            box-shadow: 0 8px 20px rgba(0, 136, 204, 0.2);
+        }
+
+        .social-link.telegram-bot {
+            border-color: rgba(0, 136, 204, 0.3);
+            color: #88c0ff;
+        }
+
+        .social-link.telegram-bot:hover {
+            background: rgba(0, 136, 204, 0.15);
+            border-color: rgba(0, 136, 204, 0.5);
+            box-shadow: 0 8px 20px rgba(0, 136, 204, 0.2);
+        }
+
+        .social-link.facebook {
+            border-color: rgba(66, 103, 178, 0.3);
+            color: #8ab4f8;
+        }
+
+        .social-link.facebook:hover {
+            background: rgba(66, 103, 178, 0.15);
+            border-color: rgba(66, 103, 178, 0.5);
+            box-shadow: 0 8px 20px rgba(66, 103, 178, 0.2);
+        }
+
+        .social-link.github {
+            border-color: rgba(139, 148, 158, 0.3);
+            color: #b0b8c0;
+        }
+
+        .social-link.github:hover {
+            background: rgba(139, 148, 158, 0.15);
+            border-color: rgba(139, 148, 158, 0.5);
+            box-shadow: 0 8px 20px rgba(139, 148, 158, 0.2);
+        }
+
         /* Footer */
         .footer {
             text-align: center;
-            padding: 40px 20px 20px;
+            padding: 20px 20px 40px;
             color: var(--text-muted);
             font-size: 14px;
         }
@@ -751,6 +838,8 @@
             .player-volume { display: none; }
             .player-art { width: 42px; height: 42px; }
             .search-container { max-width: 100%; }
+            .social-links { gap: 8px; }
+            .social-link { padding: 8px 14px; font-size: 13px; }
         }
 
         @media (min-width: 769px) and (max-width: 1024px) {
@@ -799,14 +888,41 @@
         <div style="font-size: 14px; margin-top: 8px; opacity: 0.7">تکایە ناوێکی تر تاقی بکەرەوە</div>
     </div>
 
+    <!-- Social Links Section -->
+    <div class="social-section">
+        <div class="social-title">پەیوەندی و شوێنەکان</div>
+        <div class="social-links">
+            <a href="https://t.me/Kamal_iptveditor" target="_blank" class="social-link telegram">
+                <i class="fab fa-telegram"></i>
+                <span>تەلەگرام</span>
+            </a>
+            <a href="https://t.me/iptveditor" target="_blank" class="social-link telegram">
+                <i class="fab fa-telegram"></i>
+                <span>تەلەگرام ٢</span>
+            </a>
+            <a href="https://t.me/kamalblbas_bot" target="_blank" class="social-link telegram-bot">
+                <i class="fas fa-robot"></i>
+                <span>بۆتی تەلەگرام</span>
+            </a>
+            <a href="https://www.facebook.com/kamalblbas.kbhs" target="_blank" class="social-link facebook">
+                <i class="fab fa-facebook-f"></i>
+                <span>فەیسبووک</span>
+            </a>
+            <a href="https://github.com/serverblbas-svg" target="_blank" class="social-link github">
+                <i class="fab fa-github"></i>
+                <span>گیتهاب</span>
+            </a>
+        </div>
+    </div>
+
     <div class="footer">
-        <i class="fas fa-heart"></i> ڕادیۆی قورئانی بەرێز <i class="fas fa-heart"></i>
+        <i class="fas fa-heart"></i> ڕادیۆی قورئانی پیرۆز <i class="fas fa-heart"></i>
         <br>
         <a href="#" class="github-badge" onclick="return false;">
             <i class="fab fa-github"></i>
             <span>Hosted on GitHub Pages - هەرگیز ناخەوێت</span>
         </a>
-        <br><span style="font-size: 12px; margin-top: 8px; display: block;">سوپاس بۆ الله </span>
+        <br><span style="font-size: 12px; margin-top: 8px; display: block;">سوپاس بۆ الله</span>
     </div>
 </div>
 
@@ -914,7 +1030,7 @@ function renderCards(filterText = '') {
                 <button class="play-btn ${currentStation === originalIndex && isPlaying ? 'playing' : ''}" data-index="${originalIndex}">
                     <span class="btn-text-play">
                         ${currentStation === originalIndex && isPlaying 
-                            ? '<i class="fas fa-pause" style="margin-left: 6px;"></i> ڕاگرتn' 
+                            ? '<i class="fas fa-pause" style="margin-left: 6px;"></i> ڕاگرتن' 
                             : '<i class="fas fa-play" style="margin-left: 6px;"></i> گوێگرتن'}
                     </span>
                     <div class="equalizer">
